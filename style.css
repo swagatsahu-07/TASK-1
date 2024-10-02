@@ -1,44 +1,51 @@
-*{
-    margin: 0%;
-    padding: 0%;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-html,body{
+
+html, body {
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
 }
-#main{
+
+#main {
     height: 100%;
     width: 100%;
-    background-color: #d0d4D5;
+    background-color: #d0d4d5;
     position: relative;
 }
-#nav{
+
+#nav {
     height: 100px;
-    padding: 0 70;
+    padding: 0 70px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-#nav img{
+
+#nav img {
     height: 35px;
-    margin: 100px;
 }
-#nav-prt1{
+
+#nav-prt1 {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#nav-prt1 h4{
+
+#nav-prt1 h4 {
     margin-right: 60px;
     font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
     position: relative;
 }
-#nav-prt1 h4::after{
+
+#nav-prt1 h4::after {
     content: " ";
     position: absolute;
     background-color: black;
@@ -48,49 +55,58 @@ html,body{
     height: 3px;
     transition: 0.4s;
 }
-#nav-prt1 h4:hover::after{
+
+#nav-prt1 h4:hover::after {
     width: 100%;
 }
-#nav-prt2 i{
-    margin-right: 80px;
+
+#nav-prt2 i {
+    margin-right: 30px;
     font-size: 25px;
     font-weight: 500;
     transition: 0.3s;
 }
-#nav-prt2 i:hover{
+
+#nav-prt2 i:hover {
     transform: scale(1.2);
     font-weight: 1000;
 }
-#content{
+
+#content {
     width: 100%;
     height: calc(100% - 100px);
     display: flex;
     justify-content: space-between;
     position: relative;
 }
-#left{
+
+#left {
     height: 100%;
     width: 40%;
     padding: 50px 100px;
 }
-#left h5{
+
+#left h5 {
     font-size: 12px;
     color: #5d5f60;
     text-transform: capitalize;
     margin-bottom: 5px;
     margin-top: 50px;
 }
-#left h1{
+
+#left h1 {
     text-transform: uppercase;
     font-size: 62px;
     margin-bottom: 50px;
 }
-#left p{
+
+#left p {
     font-size: 16px;
     width: 90%;
     margin-bottom: 50px;
 }
-#left button{
+
+#left button {
     background-color: #000000;
     color: #fff;
     font-size: 15px;
@@ -101,46 +117,53 @@ html,body{
     border-top-left-radius: 0px;
     margin: 10px;
 }
-#left button:hover{
+
+#left button:hover {
     background-color: transparent;
     color: #000000;
 }
-#right{
+
+#right {
     height: 100%;
     width: 60%;
     padding: 60px;
     white-space: nowrap;
     overflow-x: auto;
 }
-#right::-webkit-scrollbar{
+
+#right::-webkit-scrollbar {
     display: none;
 }
-.elem{
+
+.elem {
     height: 450px;
     width: 350px;
-    background-color:#F6F6F6;
+    background-color: #f6f6f6;
     position: relative;
     border-radius: 10px;
-    box-shadow: 0px 5px 10px rgba(0, 0,0,0.3) ;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
     margin-right: 10px;
     display: inline-block;
 }
-.elem img{
+
+.elem img {
     height: 60%;
     width: 100%;
     top: 7%;
     object-fit: cover;
     position: absolute;
 }
-.elem h4{
+
+.elem h4 {
     bottom: 0;
     right: 0;
     position: absolute;
-    background-color: #d0d4D5;
+    background-color: #d0d4d5;
     padding: 14px 28px;
     border-top-left-radius: 6px;
 }
-.elem h5{
+
+.elem h5 {
     bottom: 10%;
     right: 0;
     position: absolute;
@@ -150,4 +173,100 @@ html,body{
     border-top-left-radius: 6px;
     font-weight: 500;
     font-size: 13px;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+/* Mobile Devices */
+@media only screen and (max-width: 768px) {
+    #nav {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    #nav-prt1 h4 {
+        margin-right: 20px;
+        font-size: 16px;
+    }
+
+    #content {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #left {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #left h1 {
+        font-size: 36px;
+    }
+
+    #right {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .elem {
+        height: 300px;
+        width: 250px;
+    }
+
+    .elem img {
+        height: 50%;
+    }
+}
+
+/* Tablets */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    #nav {
+        padding: 0 20px;
+    }
+
+    #content {
+        flex-direction: column;
+    }
+
+    #left {
+        width: 100%;
+        padding: 20px 40px;
+        text-align: center;
+    }
+
+    #right {
+        width: 100%;
+        padding: 20px 40px;
+    }
+
+    .elem {
+        height: 350px;
+        width: 280px;
+    }
+
+    .elem img {
+        height: 55%;
+    }
+}
+
+/* Large Desktops */
+@media only screen and (min-width: 1025px) {
+    #nav img {
+        height: 45px;
+    }
+
+    #left h1 {
+        font-size: 72px;
+    }
+
+    .elem {
+        height: 500px;
+        width: 400px;
+    }
+
+    .elem img {
+        height: 65%;
+    }
 }
